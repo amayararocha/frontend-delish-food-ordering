@@ -1,9 +1,23 @@
-import { Divider, Grid } from '@mui/material'
+import { Divider, FormControl, FormControlLabel, Grid, Radio, RadioGroup, Typography } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import React from 'react'
+import React, { useState } from 'react'
+
+const categories=["pizza", "biryani", "burguer", "chiken", "rice"]
+
+const foodTypes=[
+    {label:"All", value:"all"},
+    {label:"Vegetarian Only", value:"Vegetarian"},
+    {label:"Non-Vegeratian", value:"non_vegetarian"},
+    {label:"Seasonal", value:"seasonal"}
+]
 
 function RestaurantDetails() {
+        const [foodType, setFoodType] =useState("all");
+        
+        const handleFilter=(e)=>{
+            console.log(e.target.value,e.target.name);
+        }
   return (
     <div className='px-5 lg:px-20'>
         <section>
@@ -50,7 +64,25 @@ function RestaurantDetails() {
         <Divider/>
         <section className='pt-[2rem] lg:flex relative'>
             <div className='space-y-10 lg:w-[20%] filter'>
-                Filter
+                <div className='box space-y-5 lg:sticky top-28'>
+                    <div>
+                        <Typography variant='h5' sx={{paddingBottom: '1rem'}}>
+                            Food Type
+                        </Typography>
+                        <FormControl className='py-10 space-y-5' component={"fieldset"}>
+                            <RadioGroup 
+                            onChange={handleFilter}
+                            name='food_type' value={foodTypes}>
+                                {foodTypes.map((item)=>
+                                <FormControlLabel
+                                key={item.value} 
+                                value={item.value}
+                                control={<Radio />} 
+                                label={item.label} />)}
+                            </RadioGroup>
+                        </FormControl>
+                    </div>
+                </div>
             </div>
             <div className='space-y-5 lg:w-[80%] lg:pl-10'>
                 Menu
