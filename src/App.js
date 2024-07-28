@@ -5,6 +5,7 @@ import { darkTheme } from './theme/DarkTheme.js';
 import { ThemeProvider } from '@mui/material/styles';
 import Home from './component/home/Home.jsx';
 import RestaurantDetails from './component/restaurant/RestaurantDetails.jsx';
+import Cart from './component/cart/Cart.jsx';
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
       <CssBaseline/>
         <Navbar/>
         {/*<Home/>*/}
-      <RestaurantDetails/>
-
+        {/*<RestaurantDetails/>*/}
+        <Cart/>
     </ThemeProvider>
   );
 }
