@@ -1,16 +1,31 @@
-import { Button, Card, Divider } from "@mui/material";
+import { Box, Button, Card, Divider, Modal } from "@mui/material";
 import React from "react";
 import CartItem from "./CartItem";
 import AddressCard from "./AddressCard";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  outline: 'none',
+  boxShadow: 24,
+  p: 4,
+};
+
 const items = [1, 1];
 
 const Cart = () => {
   const createOrderUsingSelectedAddress = () => {};
-  const handleOpenAddressModal = () => {};
+  const handleOpenAddressModal = () => setOpen(true);
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setOpen(false);
+
   return (
-    <div>
+    <>
       <main className="lg:flex justify-between">
         <section className="lg:w-[30%] space-y-6 lg:min-h-screen pt-10">
           {items.map((item) => (
@@ -73,7 +88,17 @@ const Cart = () => {
           </div>
         </section>
       </main>
-    </div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          
+        </Box>
+      </Modal>
+    </>
   );
 };
 
