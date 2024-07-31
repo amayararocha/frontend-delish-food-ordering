@@ -6,6 +6,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import Home from './component/home/Home.jsx';
 import RestaurantDetails from './component/restaurant/RestaurantDetails.jsx';
 import Cart from './component/cart/Cart.jsx';
+import Profile from './component/profile/Profile.jsx';
+
+
 
 function App() {
   return (
@@ -14,7 +17,8 @@ function App() {
         <Navbar/>
         {/*<Home/>*/}
         {/*<RestaurantDetails/>*/}
-        <Cart/>
+        {/*<Cart/>*/}
+       <Profile/>
     </ThemeProvider>
   );
 }
