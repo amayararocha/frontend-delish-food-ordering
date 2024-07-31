@@ -7,6 +7,7 @@ import Home from './component/home/Home.jsx';
 import RestaurantDetails from './component/restaurant/RestaurantDetails.jsx';
 import Cart from './component/cart/Cart.jsx';
 import Profile from './component/profile/Profile.jsx';
+import CustomerRoute from './component/routes/CustomerRoute.jsx';
 
 
 
@@ -14,11 +15,12 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline/>
-        <Navbar/>
+        {/*<Navbar/>*/}
         {/*<Home/>*/}
         {/*<RestaurantDetails/>*/}
         {/*<Cart/>*/}
-       <Profile/>
+        {/*<Profile/>*/}
+        <CustomerRoute/>
     </ThemeProvider>
   );
 }
