@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography } 
+import { Card, CardActions, CardContent, CardMedia, IconButton, Typography } 
 from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import React from 'react'
